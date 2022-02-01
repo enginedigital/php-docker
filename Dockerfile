@@ -15,9 +15,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends $BUILD_DEPS $LI
  && docker-php-ext-configure intl && docker-php-ext-install intl \
  && docker-php-ext-configure intl && docker-php-ext-install gmp \
  && docker-php-ext-configure opcache && docker-php-ext-install opcache \
- && echo "memory_limit = 512M" > $PHP_INI_DIR/conf.d/memory-limit.ini \
+ && echo "memory_limit = 1G" > $PHP_INI_DIR/conf.d/memory-limit.ini \
  && echo "opcache.enable = 1" > $PHP_INI_DIR/conf.d/opcache.ini \
  && echo "opcache.enable_cli = 1" >> $PHP_INI_DIR/conf.d/opcache.ini \
+ && echo "opcache.validate_timestamps = 1" >> $PHP_INI_DIR/conf.d/opcache.ini \
+ && echo "opcache.revalidate_freq = 15" >> $PHP_INI_DIR/conf.d/opcache.ini \
+ && echo "opcache.max_accelerated_files = 1024" >> $PHP_INI_DIR/conf.d/opcache.ini \
+ && echo "opcache.memory_consumption = 64" >> $PHP_INI_DIR/conf.d/opcache.ini \
+ && echo "opcache.interned_strings_buffer = 8" >> $PHP_INI_DIR/conf.d/opcache.ini \
  && echo "opcache.jit_buffer_size = 100M" >> $PHP_INI_DIR/conf.d/opcache.ini \
  && echo "opcache.jit = tracing" >> $PHP_INI_DIR/conf.d/opcache.ini \
  && apt-get purge -y --auto-remove $BUILD_DEPS
