@@ -27,6 +27,8 @@ docker build -t php81 .
 docker run -it --volume="$PWD:/app" --workdir="/app" --entrypoint=/bin/bash php81
 ```
 
+If you are using docker-compose, you may want to consider using [:cached](https://docker-docs.netlify.app/docker-for-mac/osxfs-caching/#tuning-with-consistent-cached-and-delegated-configurations) volumes to improve performance.
+
 ### Running Remotely
 
 ```sh
