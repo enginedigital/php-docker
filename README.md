@@ -10,6 +10,8 @@ Docker image for PHP under build environments
 - `zip`
 - `intl`
 - `opcache`
+- `gd`
+- `bcmath`
 - increased `memory_limit`
 - enabled `jit`
 

@@ -1,5 +1,7 @@
 FROM php:8.1.0-cli
 
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV BUILD_DEPS="autoconf file pkg-config re2c libgmp-dev"
 ENV LIB_DEPS="zlib1g-dev libzip-dev"
@@ -15,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends $BUILD_DEPS $LI
  && docker-php-ext-configure intl && docker-php-ext-install intl \
  && docker-php-ext-configure intl && docker-php-ext-install gmp \
  && docker-php-ext-configure opcache && docker-php-ext-install opcache \
+ && chmod +x /usr/local/bin/install-php-extensions && install-php-extensions gd bcmath \
  && echo "memory_limit = 512M" > $PHP_INI_DIR/conf.d/memory-limit.ini \
  && echo "opcache.enable = 1" > $PHP_INI_DIR/conf.d/opcache.ini \
  && echo "opcache.enable_cli = 1" >> $PHP_INI_DIR/conf.d/opcache.ini \
