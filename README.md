@@ -11,6 +11,8 @@ Docker image for PHP under build environments
 - `autoconf`
 - `intl`
 - `opcache`
+- `gd`
+- `bcmath`
 - `gmp`
 - increased `memory_limit`
 - enabled `jit`
