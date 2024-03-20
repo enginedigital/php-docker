@@ -6,7 +6,7 @@ Docker image for PHP under build environments
 
 ### Includes
 
-- [PHP 8.1](https://hub.docker.com/layers/php/library/php/8.1.0-cli/images/sha256-701743472c7523acb4bacb9adf9caf19fec27cd4486ec17e5d0fa89b7476582d?context=explore)
+- [PHP v8.2.17](https://hub.docker.com/layers/library/php/8.2.17-cli/images/sha256-89dfe022094474dcc4e2b605da350b7d8ae1dafb50f8ff0ccca5b193df428a39?context=explore)
 - `zip`
 - `autoconf`
 - `intl`
