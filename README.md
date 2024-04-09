@@ -14,19 +14,20 @@ Docker image for PHP under build environments
 - `gd`
 - `bcmath`
 - `gmp`
+- `exif`
 - increased `memory_limit`
 - enabled `jit`
 
 ### Building
 
 ```sh
-docker build -t php81 .
+docker build -t php82 .
 ```
 
 ### Running Locally
 
 ```sh
-docker run -it --volume="$PWD:/app" --workdir="/app" --entrypoint=/bin/bash php81
+docker run -it --volume="$PWD:/app" --workdir="/app" --entrypoint=/bin/bash php82
 ```
 
 ### Running Remotely

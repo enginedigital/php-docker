@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends $BUILD_DEPS $LI
  && cd /tmp && curl -Ls https://github.com/unicode-org/icu/releases/download/release-$(echo $ICU_RELEASE | tr '.' '-')/icu4c-$(echo $ICU_RELEASE | tr '.' '_')-src.tgz > icu4c-src.tgz \
  && cd /tmp && tar xzf icu4c-src.tgz && cd /tmp/icu/source && echo "#define FALSE 0" >> config.h && echo "#define TRUE 1" >> config.h && ./runConfigureICU Linux && make && make install && rm -rf /tmp/icu /tmp/icu4c-src.tgz \
  && docker-php-ext-configure intl && docker-php-ext-install intl \
- && docker-php-ext-configure intl && docker-php-ext-install gmp \
+ && docker-php-ext-configure gmp && docker-php-ext-install gmp \
+ && docker-php-ext-configure exif && docker-php-ext-install exif \
  && docker-php-ext-configure opcache && docker-php-ext-install opcache \
  && chmod +x /usr/local/bin/install-php-extensions && install-php-extensions gd bcmath \
  && echo "memory_limit = 1G" > $PHP_INI_DIR/conf.d/memory-limit.ini \
