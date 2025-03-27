@@ -6,9 +6,8 @@ Docker image for PHP under build environments
 
 ### Includes
 
-- [PHP v8.2.17](https://hub.docker.com/layers/library/php/8.2.17-cli/images/sha256-89dfe022094474dcc4e2b605da350b7d8ae1dafb50f8ff0ccca5b193df428a39?context=explore)
+- [PHP serversideup/php:8.3-cli](https://hub.docker.com/r/serversideup/php/tags?name=8.3-cli&page=1&ordering=-name)
 - `zip`
-- `autoconf`
 - `intl`
 - `opcache`
 - `gd`
@@ -21,13 +20,13 @@ Docker image for PHP under build environments
 ### Building
 
 ```sh
-docker build -t php82 .
+docker build -t php-docker .
 ```
 
 ### Running Locally
 
 ```sh
-docker run -it --volume="$PWD:/app" --workdir="/app" --entrypoint=/bin/bash php82
+docker run -it --volume="$PWD:/app" --workdir="/app" --entrypoint=/bin/bash php-docker:latest
 ```
 
 ### Running Remotely
