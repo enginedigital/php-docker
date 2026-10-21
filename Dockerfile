@@ -1,7 +1,7 @@
 # docker build -t phpdocker .
 # docker run -it --volume="$PWD:/app" --workdir="/app" --entrypoint=/bin/bash phpdocker:latest
 
-FROM serversideup/php:8.3-cli
+FROM serversideup/php:8.3.36-cli
 
 # Switch to root so we can do root things
 USER root

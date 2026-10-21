@@ -6,7 +6,7 @@ Docker image for PHP under build environments
 
 ### Includes
 
-- [PHP serversideup/php:8.3-cli](https://hub.docker.com/r/serversideup/php/tags?name=8.3-cli&page=1&ordering=-name)
+- [PHP serversideup/php:8.3.36-cli](https://hub.docker.com/r/serversideup/php/tags?name=8.3.36-cli&page=1&ordering=-name)
 - `zip`
 - `intl`
 - `opcache`
